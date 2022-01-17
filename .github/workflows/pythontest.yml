@@ -24,4 +24,4 @@ jobs:
     - name: Run linting (flake8)
       run: |
         cd app
-        python manage.py flake8
+        flake8

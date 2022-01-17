@@ -1,3 +1,13 @@
 Just checking if it works
 
 Again
+
+
+##########################################################
+## TEST COMMAND:                                        ##
+##                                                      ##
+## docker-compose run app sh -c "python manage.py test" ##
+##########################################################
+
+With linting:
+docker-compose run app sh -c "python manage.py test && flake8"
