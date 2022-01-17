@@ -9,9 +9,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build the docker-compose stack
-        run: docker-compose -f docker-compose.dev.yml up -d
-      - name: Check running containers
-        run: docker ps -a
-      - name: Lint with flake8
-        run: docker-compose exec application flake8
+      - name: Run the taskset
+        run: docker-compose run app sh -c "python manage.py wait_for_db && python manage.py test && flake8"
