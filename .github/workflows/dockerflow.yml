@@ -9,6 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      - name: Build the docker-compose stack
+        run: docker-compose up -d
+      - name: Check running containers
+        run: docker ps -a
+      - name: Run test
+        run: docker exec application "python manage.py test"
       - name: Run the test commands
         run: docker-compose run app sh -c "python manage.py wait_for_db && python manage.py test && flake8"

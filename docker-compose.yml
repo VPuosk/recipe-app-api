@@ -19,6 +19,7 @@ services:
       - DB_PASS=somefunnypassword
     depends_on:
       - db
+    container_name: application
 
   db:
     image: postgres:10-alpine
@@ -26,3 +27,4 @@ services:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=somefunnypassword
+    container_name: database
