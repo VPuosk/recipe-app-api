@@ -14,7 +14,7 @@ services:
              flake8"
     environment:
       - DB_HOST=db
-      - DB_NAME=app
+      - DB_NAME=postgres
       - DB_USER=postgres
       - DB_PASS=somefunnypassword
     depends_on:
@@ -24,7 +24,7 @@ services:
   db:
     image: postgres:10-alpine
     environment:
-      - POSTGRES_DB=app
+      - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=somefunnypassword
     container_name: database
