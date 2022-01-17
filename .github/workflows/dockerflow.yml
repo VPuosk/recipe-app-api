@@ -13,3 +13,5 @@ jobs:
         run: docker-compose -f docker-compose.dev.yml up -d
       - name: Check running containers
         run: docker ps -a
+      - name: Lint with flake8
+        run: docker-compose exec application flake8
